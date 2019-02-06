@@ -28,9 +28,13 @@ node {
             echo "working on branch different from master"
         }
         echo "testing pipeline"
-        sh "mkdir -p from-jenkins"
-        sh "touch from-jenkins/test.txt"
-        sh "ls from-jenkins/non-existent.txt"
+        try {
+            sh "mkdir -p from-jenkins"
+            sh "touch from-jenkins/test.txt"
+            sh "ls from-jenkins/non-existent.txt"
+        } catch (Exception e) {
+            echo "Something went wrong"
+        }
     }
     stage('saying goodbye') {
         echo "goodbye from pipeline"
