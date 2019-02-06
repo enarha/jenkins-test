@@ -22,10 +22,15 @@ pipeline {
 */
 node {
     stage('testing pipeline'){
+        if (env.BRANCH_NAME == 'master') {
+            echo "working on branch master"
+        } else {
+            echo "working on branch different from master"
+        }
         echo "testing pipeline"
-        echo "working on branch env.BRANCH_NAME"
         sh "mkdir -p from-jenkins"
         sh "touch from-jenkins/test.txt"
+        sh "ls from-jenkins/non-existent.txt"
     }
     stage('saying goodbye') {
         echo "goodbye from pipeline"
