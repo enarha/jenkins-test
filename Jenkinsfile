@@ -33,7 +33,7 @@ node {
             sh "touch from-jenkins/test.txt"
             sh "ls from-jenkins/non-existent.txt"
         } catch (Exception e) {
-            echo "Something went wrong"
+            println "Something went wrong! Recorded error: $e"
         }
     }
     stage('saying goodbye') {
