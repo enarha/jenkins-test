@@ -37,6 +37,8 @@ node {
         }
     }
     stage('saying goodbye') {
-        echo "goodbye from pipeline"
+        timestamps {
+            echo "goodbye from pipeline"
+        }
     }
 }
