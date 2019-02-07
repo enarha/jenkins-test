@@ -1,6 +1,9 @@
 // import my shared lib
 @Library('jenkins-shared-libs')_
 // The underscore at the end of the line is required if the following line is not an import statement
+
+import cleverbuilder.GlobalVars
+
 /*
 pipeline {
     agent any
