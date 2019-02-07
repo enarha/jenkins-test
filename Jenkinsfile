@@ -33,6 +33,7 @@ node {
             }
             echo "testing pipeline"
             sayHello('ena')
+            sayHello(GlobalVars.foo)
             try {
                 sh "mkdir -p from-jenkins"
                 sh "touch from-jenkins/test.txt"
