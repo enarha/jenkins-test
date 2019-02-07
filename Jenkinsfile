@@ -1,3 +1,6 @@
+// import my shared lib
+@Library('jenkins-shared-libs')_
+// The underscore at the end of the line is required if the following line is not an import statement
 /*
 pipeline {
     agent any
@@ -29,6 +32,7 @@ node {
                 echo "working on branch different from master"
             }
             echo "testing pipeline"
+            sayHello('ena')
             try {
                 sh "mkdir -p from-jenkins"
                 sh "touch from-jenkins/test.txt"
